@@ -6,7 +6,7 @@ USER root
 RUN chown clamav:clamav /var/lib/clamav /var/log/clamav
 
 RUN mkdir /var/run/clamav && \
-    chown -R clamav:clamav /var/run/clamav /run/lock /var/lock /tmp && \
+    chown -R clamav:clamav /var/run/clamav /run/lock /var/lock && \
     chmod -R 750 /var/run/clamav /run/lock /var/lock
 
 RUN echo "LogClean yes" >> /etc/clamav/clamd.conf
