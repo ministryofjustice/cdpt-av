@@ -19,4 +19,4 @@ RUN echo "LogClean yes" >> /etc/clamav/clamd.conf
 # port provision
 EXPOSE 3310
 
-USER clamav
+USER 100
