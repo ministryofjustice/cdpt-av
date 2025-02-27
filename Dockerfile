@@ -14,6 +14,7 @@ USER root
 # volume provision
 VOLUME ["/var/lib/clamav"]
 VOLUME ["/var/log/clamav"]
+VOLUME ["/run/clamav"]
 
 # port provision
 EXPOSE 3310
