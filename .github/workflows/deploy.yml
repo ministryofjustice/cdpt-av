@@ -34,7 +34,7 @@ jobs:
 
       - name: Build
         run: |
-          docker build . -t ${{ secrets.ECR_REGISTRY_URL }}/av:latest
+          docker build . -t ${{ secrets.ECR_REGISTRY_URL }}/${{ vars.ECR_REPOSITORY }}:latest
 
       - name: Push to ECR
-        run: docker push ${{ secrets.ECR_REGISTRY_URL }}/av:latest
+        run: docker push ${{ secrets.ECR_REGISTRY_URL }}/${{ vars.ECR_REPOSITORY }}:latest
