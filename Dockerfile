@@ -3,7 +3,7 @@ FROM clamav/clamav:stable AS base
 USER root
 
 # permission juggling
-RUN chown 102:102 /var/lib/clamav /var/log/clamav
+RUN chown clamav:clamav /var/lib/clamav /var/log/clamav
 
 # RUN mkdir /var/run/clamav && \
 #     chown -R clamav:clamav /var/run/clamav /run/lock /var/lock && \
@@ -19,4 +19,7 @@ VOLUME ["/run/clamav"]
 # port provision
 EXPOSE 3310
 
-USER 102
+RUN usermod -u 1050 clamav && \
+    groupmod -g 1050 clamav
+
+USER 1050
