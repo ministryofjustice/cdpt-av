@@ -10,6 +10,7 @@ RUN mkdir /var/run/clamav && \
     chmod -R 750 /var/run/clamav /run/lock /var/lock
 
 RUN echo "LogClean yes" >> /etc/clamav/clamd.conf
+RUN echo "TCPAddr 0.0.0.0" >> /etc/clamav/clamd.conf
 
 # port provision
 EXPOSE 3310
